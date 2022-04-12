@@ -17,7 +17,12 @@ const Form = () =>{
         console.log(username)
         let options= {method: 'GET'}
         await fetch(`https://api.github.com/users/${username}/repos`,options)
-         .then(d=>d.json())
+         .then(res=>{
+             /*if (res.status==404){
+
+             }*/
+             return res.json()
+        })
          .then(d=>{
             const newObj={data: d}
             setInput(oldObj=>{ return {...oldObj, ...newObj}})

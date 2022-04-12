@@ -1,7 +1,7 @@
 # Github-repo-tracker
 By
-- Andrew Upton
-- Mike Nelson
+- Andrew Upton (nottnottloop)
+- Mike Nelson (mwezn)
 
 Type in a username, and see some data about that repo
 
