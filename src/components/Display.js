@@ -12,7 +12,8 @@ const RenderList = (props) =>{
             <a>Last Push: {new Date(d.pushed_at).toLocaleDateString()} at {new Date(d.pushed_at).toLocaleTimeString()} </a><br></br>
             <a>Stargazers: {d.stargazers_count}</a><br></br>
             <a>Visibility: {d.visibility}</a><br></br>
-            <a>Forks: {d.forks}</a>
+            <a>Forks: {d.forks}</a><br></br>
+            <a>Issues Count: {d.open_issues}</a>
             
         </li>)
         
