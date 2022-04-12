@@ -9,9 +9,10 @@ const RenderList = (props) =>{
             <h2>{d.name}</h2>
             <a target="_blank" href={d.html_url}>{d.html_url}</a><br></br>
             <a>Languages: {d.language}</a><br></br>
-            <a>Last Push: {d.pushed_at} </a><br></br>
+            <a>Last Push: {new Date(d.pushed_at).toLocaleDateString()} at {new Date(d.pushed_at).toLocaleTimeString()} </a><br></br>
             <a>Stargazers: {d.stargazers_count}</a><br></br>
-            <a>Visibility: {d.visibility}</a>
+            <a>Visibility: {d.visibility}</a><br></br>
+            <a>Forks: {d.forks}</a>
             
         </li>)
         
