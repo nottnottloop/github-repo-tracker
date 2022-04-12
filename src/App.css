@@ -1,6 +1,15 @@
 body {
   background-color: black;
-  color: white;
+  background-image: url(matrix2.gif);
+  background-size: cover;
+  color: cyan;
+}
+
+p {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: inline-block;
 }
 
 .App {
