@@ -17,21 +17,24 @@ const Form = () =>{
         console.log(username)
         let options= {method: 'GET'}
         await fetch(`https://api.github.com/users/${username}/repos`,options)
+         .then(d=>d.json())
          .then(d=>{
-             console.log(d)
-             return d.json()
-        })
-        .then(d=>{
-
+            const newObj={data: d}
+            setInput(oldObj=>{ return {...oldObj, ...newObj}})
+            console.log(d,d.length)
         })
          
     }
-
+       let searched=inputVal.data
 		return (
-				<form onSubmit={e=>onSubmit(e)}>
-					<input type="text" onChange={e=>onType(e)}></input>
-                    <input type="submit" value="Search" />
-				</form>
+            <div>
+			<form onSubmit={e=>onSubmit(e)}>
+				<input type="text" onChange={e=>onType(e)}></input>
+                <input type="submit" value="Search" />
+			</form>
+            {searched?<RenderList data={searched}></RenderList>
+            :<h2>Type a github username to find details</h2>}
+            </div>
 			
 		);
 }
