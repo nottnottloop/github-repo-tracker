@@ -24,8 +24,8 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Wins
-[x] - Successfully fetched data & displayed
-[x] - Used ternary logic to show either data or errors
+- [x] - Successfully fetched data & displayed
+- [x] - Used ternary logic to show either data passed as props or errors
 ## Challenges
-[x] -Testing 
-[x] - Webpack
+- [] -Testing 
+- [] - Webpack
