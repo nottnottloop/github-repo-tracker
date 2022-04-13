@@ -23,10 +23,11 @@ const RenderList = (props) =>{
         
     ;
     let user=props.username
+    
     return (
 			<div className='results'>
             
-                <div><h1>Results for {user} </h1>
+                <div><h1>There are {props.data.length} repos for {user}</h1><br></br>
                 <ul>{values2}</ul>
                 </div>
             </div>
