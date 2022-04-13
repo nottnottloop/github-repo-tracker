@@ -10,7 +10,6 @@ const Form = () =>{
         setInput(oldObj=>{ return {...oldObj, ...newObj}})
         
     }
-    let load={loading:true}
     const onSubmit = async e => {
         e.preventDefault()
         let username=inputVal.username
@@ -31,7 +30,8 @@ const Form = () =>{
              return res.json()
         })
          .then(d=>{
-            const newObj={data: d,error:true}
+             let newObj;
+             !d?newObj={data: d,error:true}:newObj={data:d,error:false}
             setInput(oldObj=>{ return {...oldObj, ...newObj}})
         })
          
