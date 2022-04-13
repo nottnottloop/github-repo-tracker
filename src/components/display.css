@@ -1,4 +1,17 @@
 li {
     list-style-type: none;
     border: 1px solid teal;
+    height: 250px;
+    overflow: visible;
+    background-color:rgb(127,255,212,0.3);
+    transition: all .3s;
+}
+li:hover {
+    background-color: rgb(127,255,212,0.9);/*rgb127 255 212*/
+    color:black;
+}
+
+div.results {
+    display: flex;
+    justify-content: center;
 }

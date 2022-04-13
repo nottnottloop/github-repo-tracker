@@ -31,8 +31,10 @@ const Form = () =>{
         })
          .then(d=>{
              let newObj;
-             !d?newObj={data: d,error:true}:newObj={data:d,error:false}
+             !d?newObj={data: d,error:true}:newObj={data:d,error:false} 
+             //ternary statement to check if data is null
             setInput(oldObj=>{ return {...oldObj, ...newObj}})
+            //overwrite old state parameters with new ones
         })
          
     }
@@ -41,7 +43,7 @@ const Form = () =>{
        console.log(e)
 		return (
             <div>
-                {e?<h1>User doesnt exist</h1>:null}
+                {e?<h1>{inputVal.username} doesnt exist on github. Try a different one</h1>:null}
 			<form onSubmit={e=>onSubmit(e)}>
 				<input type="text" onChange={e=>onType(e)}></input>
                 <input type="submit" value="Search" />

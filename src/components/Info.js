@@ -7,7 +7,6 @@ const RenderList = (props) =>{
     data.forEach(d => {
             values2.push(
             <li>
-              <h2>{d.name}</h2>
                 <a target="_blank" href={d.html_url}>{d.html_url}</a><br></br>
                 <a>Languages: {d.language}</a><br></br>
                 <a>Last Push: {new Date(d.pushed_at).toLocaleDateString()} at {new Date(d.pushed_at).toLocaleTimeString()} </a><br></br>
@@ -25,11 +24,8 @@ const RenderList = (props) =>{
     let user=props.username
     return (
 			<div className='results'>
-            
-                <div><h1>Results for {user} </h1>
                 <ul>{values2}</ul>
                 </div>
-            </div>
 	);
 }
 
