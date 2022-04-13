@@ -1,0 +1,8 @@
+.spooky {
+    clip-path: ellipse(100px at 50% );
+    transition: all 2s;
+}
+
+.spooky:hover {
+    clip-path:ellipse(200px at 50%);
+}

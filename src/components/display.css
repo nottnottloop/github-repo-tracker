@@ -1,0 +1,33 @@
+li {
+    list-style-type: none;
+    border: 1px solid teal;
+    height: 250px;
+    
+    overflow: visible;
+    background-color:rgb(127,255,212,0.5);
+    transition: all .3s;
+    transform:scale(1);
+    clip-path: polygon(10% 0%, 90% 0%, 90% 30%, 10% 30%);
+}
+li:hover {
+    background-color: rgb(127,255,212,0.9);/*rgb127 255 212*/
+    color:black;
+    border-radius: 20px;
+    padding: 10px;
+    transform: scale(1.2);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    
+}
+
+div.results {
+    display: flex;
+    justify-content: center;
+}
+
+ul li h2{
+    display:flex;
+    justify-content: center;
+}
+ul {
+    margin-top:100px;
+}
