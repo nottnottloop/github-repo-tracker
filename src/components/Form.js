@@ -46,7 +46,7 @@ const Form = () =>{
 				<input type="text" onChange={e=>onType(e)}></input>
                 <input type="submit" value="Search" />
 			</form>
-            {searched?<RenderList data={searched}></RenderList>
+            {searched?<RenderList data={searched} username={inputVal.username}></RenderList>
             :<h2>Type a github username to find details</h2>}
             </div>
 			

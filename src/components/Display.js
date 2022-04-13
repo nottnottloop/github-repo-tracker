@@ -22,7 +22,7 @@ const RenderList = (props) =>{
 
         
     ;
-    let user=props.data[0].owner.login
+    let user=props.username
     return (
 			<div>
             
