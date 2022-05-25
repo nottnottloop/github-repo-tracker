@@ -8,7 +8,32 @@ const Form = () =>{
         console.log(e.target.value)
         const newObj={username: e.target.value}
         setInput(oldObj=>{ return {...oldObj, ...newObj}})
-        
+    }
+    const onTypeFetch = async e =>{
+        let options= {method: 'GET'}
+        const newObj={username: e.target.value}
+        setInput(oldObj=>{ return {...oldObj, ...newObj}})
+        console.log(e.target.value)
+        await fetch(`https://api.github.com/users/${e.target.value}/repos`,options)
+         .then(res=>{
+             if (res.status==404){
+              //GIVE USER DOESNT EXIST ERROR 
+              setInput(old=>{
+                  old.data=null;
+                  return old
+              })
+              return null
+             }
+             return res.json()
+        })
+         .then(d=>{
+             let newObj;
+             !d?newObj={data: d,error:true}:newObj={data:d,error:false} 
+             //ternary statement to check if data is null
+            setInput(oldObj=>{ return {...oldObj, ...newObj}})
+            //overwrite old state parameters with new ones
+        })
+
     }
     const onSubmit = async e => {
         e.preventDefault()
@@ -45,7 +70,7 @@ const Form = () =>{
             <div>
                 {e?<h1>{inputVal.username} doesnt exist on github. Try a different one</h1>:null}
 			<form onSubmit={e=>onSubmit(e)}>
-				<input type="text" onChange={e=>onType(e)}></input>
+				<input type="text" onChange={e=>onTypeFetch(e)}></input>
                 <input type="submit" value="Search" />
 			</form>
             {searched?<RenderList data={searched} username={inputVal.username}></RenderList>

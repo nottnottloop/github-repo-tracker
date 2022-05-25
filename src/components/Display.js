@@ -18,18 +18,26 @@ const RenderList = (props) =>{
                 
     </li>)
         
-})
+}) 
+  
+  const click =(e)=>{
+    let view=document.getElementById('results')
+    view.classList.toggle('active')
+  }
 
         
     ;
     let user=props.username
     
     return (
-			<div className='results'>
-            
+           <div>
+             <a onClick={(e)=>click()}>X</a>
+			     <div id="results" className='results'>
+                
                 <div><h1>There are {props.data.length} repos for {user}</h1><br></br>
                 <ul>{values2}</ul>
                 </div>
+            </div>
             </div>
 	);
 }

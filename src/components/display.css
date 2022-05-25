@@ -22,6 +22,17 @@ li:hover {
 div.results {
     display: flex;
     justify-content: center;
+    background-color: rgba(27, 43, 78, 0.5);/*rgb(138,43,226)*/
+    width:80%;
+}
+.results.active {
+    display: none;
+    background-color: aqua;
+}
+.results button {
+    display: block;
+    width:100px;
+    height:10px;
 }
 
 ul li h2{
